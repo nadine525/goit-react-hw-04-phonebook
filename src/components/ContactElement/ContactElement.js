@@ -9,7 +9,7 @@ const ContactElement = ({ contact, deleteContact }) => {
   return (
     <Contact>
       <Person>
-        <FaPhone size={iconSize.xs} /> {contact.name}:{contact.number}
+        <FaPhone size={iconSize.xs} /> {contact.name} : {contact.number}
       </Person>
       <Button type="button" onClick={() => deleteContact(contact.id)}>
         Delete
