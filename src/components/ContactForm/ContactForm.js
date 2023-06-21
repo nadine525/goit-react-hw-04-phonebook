@@ -30,7 +30,7 @@ function ContactForm({ formSubmitHandler }) {
       number,
     };
 
-    formSubmitHandler({ name, number });
+    formSubmitHandler(contact);
 
     console.log(contact);
 

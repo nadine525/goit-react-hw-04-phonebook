@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Label } from './Filter.styled';
 import { Input } from '../ContactForm/ContactForm.styled';
 
-const Filter = ({ value, onChange }) => {
+const Filter = ({ filter, onChange }) => {
   return (
     <Label>
       Find Contacts by name
-      <Input type="text" value={value} onChange={onChange} />
+      <Input type="text" value={filter} onChange={onChange} />
     </Label>
   );
 };
@@ -15,6 +15,6 @@ const Filter = ({ value, onChange }) => {
 export default Filter;
 
 Filter.propTypes = {
-  value: PropTypes.string.isRequired,
+  filter: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

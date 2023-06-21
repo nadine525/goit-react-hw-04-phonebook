@@ -14,23 +14,24 @@ export function App() {
 
 
   const formSubmitHandler = (newContact) => {
-    // console.log(newContact)
+    console.log(newContact)
 
     if (contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
       return alert(`${newContact} is already in the contact list`)
     } else {
-      setContacts(prevState => [newContact, ...prevState.contacts])
+      setContacts(prevState => [newContact, ...prevState])
     }
   }
 
 
   const changeFilter = (event) => {
     setFilter(event.currentTarget.value);
+    console.log(changeFilter)
   };
   
 
   const deleteContact = contactId => {
-    setContacts(prevState => (prevState.contacts.filter(contact => contact.id !== contactId)));
+    setContacts(prevState => (prevState.filter(contact => contact.id !== contactId)));
   };
 
   const getVisibleContacts = () => {
@@ -71,11 +72,11 @@ export function App() {
   return (
      <Division>
       <h1>Phonebook</h1>
-      <ContactForm onSubmit={formSubmitHandler} />
+      <ContactForm formSubmitHandler={formSubmitHandler} />
 
       <h2>Contacts</h2>
-      <Filter value={filter} onChange={changeFilter} />
-      <ContactList visibleContacts={visibleContacts} onDeleteContact={deleteContact}/>
+      <Filter filter={filter} onChange={changeFilter} />
+      <ContactList visibleContacts={visibleContacts} deleteContact={deleteContact}/>
     </Division>
   )
 };

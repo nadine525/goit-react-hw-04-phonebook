@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 import ContactElement from '../ContactElement';
 import { List } from './ContactList.styled';
 
-const ContactList = ({ visibleContacts, onDeleteContact }) => {
+const ContactList = ({ visibleContacts, deleteContact }) => {
   return (
     <List>
       {visibleContacts.map(visibleContact => (
         <ContactElement
-          key={visibleContacts.id}
-          visibleContacts={visibleContacts}
-          onDeleteContact={onDeleteContact}
+          key={visibleContact.id}
+          contact={visibleContact}
+          deleteContact={deleteContact}
         />
       ))}
     </List>
@@ -27,5 +27,5 @@ ContactList.propTypes = {
       number: PropTypes.string.isRequired,
     }).isRequired
   ).isRequired,
-  onDeleteContact: PropTypes.func.isRequired,
+  deleteContact: PropTypes.func.isRequired,
 };
