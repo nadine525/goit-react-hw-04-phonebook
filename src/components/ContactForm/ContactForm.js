@@ -32,7 +32,7 @@ function ContactForm({ formSubmitHandler }) {
 
     formSubmitHandler(contact);
 
-    // console.log(contact, this.state.name);
+    console.log(contact);
 
     reset();
   };

@@ -13,13 +13,13 @@ export function App() {
   const [filter, setFilter] = useState('');
 
 
-  const formSubmitHandler = (contact, newName) => {
-    // console.log(contact, newName)
+  const formSubmitHandler = (newContact) => {
+    // console.log(newContact)
 
-    if (contacts.some(contact => contact.name.toLowerCase() === newName.toLowerCase())) {
-      return alert(`${newName} is already in the contact list`)
+    if (contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
+      return alert(`${newContact} is already in the contact list`)
     } else {
-      setContacts(prevState => [contact, ...prevState.contacts])
+      setContacts(prevState => [newContact, ...prevState.contacts])
     }
   }
 

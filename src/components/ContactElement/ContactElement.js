@@ -22,7 +22,7 @@ const ContactElement = ({ visibleContacts, onDeleteContact }) => {
 export default ContactElement;
 
 ContactElement.propTypes = {
-  contact: PropTypes.exact({
+  visibleContacts: PropTypes.exact({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
