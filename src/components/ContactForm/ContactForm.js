@@ -22,15 +22,15 @@ function ContactForm({ formSubmitHandler }) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const { name, number } = event.currentTarget.elements;
+    // const { name, number } = event.currentTarget.elements;
 
     const contact = {
       id: nanoid(),
-      name: name.value,
-      number: number.value,
+      name,
+      number,
     };
 
-    formSubmitHandler(contact);
+    formSubmitHandler({ name, number });
 
     console.log(contact);
 
