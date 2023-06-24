@@ -9,7 +9,9 @@ import { Division } from './App.styled';
 
 export function App() {
   
-  const [contacts, setContacts] = useState(JSON.parse(window.localStorage.getItem('contacts')) ?? []);
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(window.localStorage.getItem('contacts')) ?? []
+  });
   const [filter, setFilter] = useState('');
 
 
@@ -17,7 +19,7 @@ export function App() {
     console.log(newContact)
 
     if (contacts.some(contact => contact.name.toLowerCase() === newContact.name.toLowerCase())) {
-      return alert(`${newContact} is already in the contact list`)
+      return alert(`${newContact.name} is already in the contact list`)
     } else {
       setContacts(prevState => [newContact, ...prevState])
     }
